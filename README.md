@@ -8,7 +8,7 @@ Execute `ng serve` para um servidor dev. Navegue até `http://localhost:4200/`. 
 
 ## Detalhes do projeto
 
-Esse projeto tem como intuito consumir uma API [PokeApi](https://pokeapi.co/)
+Esse projeto tem como intuito consumir uma API em [PokeApi](https://pokeapi.co/)
 e listar todos os pokemons com seus detalhes.
 
 
