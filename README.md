@@ -4,7 +4,7 @@ Esse projeto foi desenvolvido em [Angular CLI](https://github.com/angular/angula
 
 ## Server local para desenvolvimento e testes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Execute `ng serve` para um servidor dev. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
 ## Detalhes do projeto
 
