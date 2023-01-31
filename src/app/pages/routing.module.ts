@@ -1,5 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //Components
