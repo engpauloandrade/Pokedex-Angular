@@ -82,38 +82,10 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "pokedex:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "pokedex:serve:production"
-            }
-          }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {}
         }
       }
     }
   },
-  "defaultProject": "pokedex",
   "cli": {
     "analytics": "ff6381d6-cc4e-46f8-8472-832bb8464c1e"
   }
