@@ -10,8 +10,12 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent implements OnInit {
-  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon/';
-  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species/';
+  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon';
+  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
+
+  public pokemon: any;
+  public isLoading: boolean = false;
+  public apiError: boolean = false;
 
   constructor(
     private activedRoute: ActivatedRoute,
@@ -19,16 +23,24 @@ export class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.pokemon;
+    this.getPokemon;
   }
 
-  get pokemon() {
+  get getPokemon() {
     const id = this.activedRoute.snapshot.params['id'];
     const pokemon = this.pokeApiService.apiGetPokemon(
-      '${this.urlPokemon}${id}'
+      `${this.urlPokemon}/${id}`
     );
-    const name = this.pokeApiService.apiGetPokemon('${this.urlName}${id}');
+    const name = this.pokeApiService.apiGetPokemon(`${this.urlName}/${id}`);
 
-    return forkJoin([pokemon, name]).subscribe((results) => {});
+    return forkJoin([pokemon, name]).subscribe(
+      (results) => {
+        this.pokemon = results;
+        this.isLoading = true;
+      },
+      (error) => {
+        this.apiError = true;
+      }
+    );
   }
 }
